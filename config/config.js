@@ -1,30 +1,26 @@
-require("dotenv").config();
-
-const { DB_USERNAME, DB_PASSWORD, DB_HOST, DB_NAME, DB_PORT, DB_SSL_MODE, DB_DIALECT } = process.env;
-
 module.exports = {
   development: {
-    username: DB_USERNAME,
-    password: DB_PASSWORD,
-    database: DB_NAME,
-    host: DB_HOST,
-    port: DB_PORT,
-    dialect: DB_DIALECT,
+    username: "atmberas-admin",
+    password: "FAdAjXDcEvovER8E",
+    database: "atmberas",
+    host: "dbaas-db-76940-do-user-10126019-0.b.db.ondigitalocean.com",
+    port: 25060,
+    dialect: "mysql",
   },
   test: {
-    username: DB_USERNAME,
-    password: DB_PASSWORD,
-    database: DB_NAME,
-    host: DB_HOST,
-    port: DB_PORT,
-    dialect: DB_DIALECT,
+    username: "atmberas-admin",
+    password: "FAdAjXDcEvovER8E",
+    database: "atmberas",
+    host: "dbaas-db-76940-do-user-10126019-0.b.db.ondigitalocean.com",
+    port: 25060,
+    dialect: "mysql",
   },
   production: {
-    username: DB_USERNAME,
-    password: DB_PASSWORD,
-    database: DB_NAME,
-    host: DB_HOST,
-    port: DB_PORT,
-    dialect: DB_DIALECT,
+    username: "atmberas-admin",
+    password: "FAdAjXDcEvovER8E",
+    database: "atmberas",
+    host: "dbaas-db-76940-do-user-10126019-0.b.db.ondigitalocean.com",
+    port: 25060,
+    dialect: "mysql",
   },
 };
