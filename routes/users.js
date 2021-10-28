@@ -1,5 +1,4 @@
 var express = require("express");
-const { default: Validator } = require("fastest-validator");
 var router = express.Router();
 
 const Validator = require("fastest-validator");
