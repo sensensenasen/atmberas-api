@@ -2,6 +2,7 @@ var express = require("express");
 var router = express.Router();
 const Validator = require("fastest-validator");
 const v = new Validator();
+const { Op } = require("sequelize");
 
 const { User } = require("../models");
 
@@ -18,6 +19,22 @@ router.get("/:id", async (req, res) => {
   const id = req.params.id;
   const user = await User.findByPk(id);
   res.status(200).json(user);
+});
+
+/* GET users listing by id. */
+/* http://159.89.205.119/users/counterreset */
+router.get("/counterreset", async (req, res) => {
+  let users = await User.findAll({
+    where: {
+      [Op.and]: [{ counter: 3 }, { role: "penerima" }],
+    },
+  });
+  if (!users) {
+    res.status(400).json({ error: "User Not Found!" });
+  }
+  await users.update({ counter: 0 });
+
+  res.status(200).json({ message: "Manual reset success" });
 });
 
 /* POST users listing. */
