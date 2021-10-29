@@ -9,6 +9,7 @@ var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
 var logsRouter = require("./routes/logs");
 var atmRouter = require("./routes/atm");
+var resetRouter = require("./routes/reset");
 
 var app = express();
 
@@ -22,6 +23,7 @@ app.use("/", indexRouter);
 app.use("/users", usersRouter);
 app.use("/logs", logsRouter);
 app.use("/atm", atmRouter);
+app.use("/reset", resetRouter);
 app.use(cors());
 
 module.exports = app;
