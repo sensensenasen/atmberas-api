@@ -25,7 +25,11 @@ module.exports = {
         type: Sequelize.INTEGER,
         allowNull: false,
       },
-      logType: {
+      berat_beras: {
+        type: Sequelize.DECIMAL,
+        allowNull: false,
+      },
+      log_type: {
         type: Sequelize.STRING(20),
         allowNull: false,
       },
