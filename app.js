@@ -13,6 +13,7 @@ var resetRouter = require("./routes/reset");
 
 var app = express();
 
+app.use(cors());
 app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -24,6 +25,5 @@ app.use("/users", usersRouter);
 app.use("/logs", logsRouter);
 app.use("/atm", atmRouter);
 app.use("/reset", resetRouter);
-app.use(cors());
 
 module.exports = app;

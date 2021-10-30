@@ -13,10 +13,14 @@ router.get("/", async (req, res) => {
 });
 
 /* GET users listing by id. */
-/* http://159.89.205.119/users/1 */
-router.get("/:id", async (req, res) => {
-  const id = req.params.id;
-  const user = await User.findByPk(id);
+/* http://159.89.205.119/users/e0040100019d0ca2 */
+router.get("/:uid_card", async (req, res) => {
+  const id = req.params.uid_card;
+  const user = await User.findOne({
+    where: {
+      uid_card: id,
+    },
+  });
   res.status(200).json(user);
 });
 
